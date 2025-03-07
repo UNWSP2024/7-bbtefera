@@ -8,3 +8,12 @@
 # Also include exception handling to deal with faulty input.
 # The distance between two points (x1,y1,z1) and (x2, y2, z2) is 
 #    given by:   sqrt ((x2-x1)^2 + (y2 - y1)^2 + (z1 - z2)^2) 
+import math
+
+def distance(p1, p2):
+    return math.sqrt(sum((a - b) ** 2 for a, b in zip(p1, p2))
+
+p1 = tuple(map(float, input("Enter first point (x1, y1, z1): ").split(',')))
+p2 = tuple(map(float, input("Enter second point (x2, y2, z2): ").split(',')))
+
+print(f"Distance: {distance(p1, p2):.2f}")
